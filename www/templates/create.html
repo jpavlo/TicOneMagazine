@@ -1,0 +1,14 @@
+<ion-view view-title="Create user">
+  <ion-content>
+	  <div class="item item-avatar">
+	    <img ng-src="{{datas.facebook.cachedUserProfile.picture.data.url}}">
+	    <h2>{{datas.facebook.displayName}}</h2>
+	    <p>{{datas.facebook.email}}</p>
+	  </div>
+    	<div class="list list-inset">
+    	    <button class="button button-block button-positive" ng-hide="faceid" ng-click="create()"> 
+    	    	 Create user
+    	    </button>
+    	</div>
+  </ion-content>
+</ion-view>

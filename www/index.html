@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"> -->
+
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -14,6 +16,10 @@
     <!-- ng Cordova Plugin -->
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
+
+    <!-- ngStorage -->
+    <script src="js/ngStorage.min.js"></script>
+
     <script src="cordova.js"></script>
 
     <!-- Firebase added -->
@@ -22,11 +28,18 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/controllers/login.js"></script>
+    <script src="js/controllers/create.js"></script>
+    <script src="js/controllers/display.js"></script>
   </head>
   <body ng-app="starter">
 
     <ion-pane>
       <ion-nav-bar class="bar-stable"></ion-nav-bar>
+      <div class="bar bar-subheader" ng-show="networkState == 'none'">
+        <button class="button button-icon icon ion-camera"></button>
+  <h2 class="title">No network</h2>
+</div>
       <ion-nav-view></ion-nav-view>
     </ion-pane>
   </body>
